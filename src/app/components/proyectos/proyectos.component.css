@@ -3,7 +3,10 @@
 }
 
 div{
-    background: #d6d1d1;
+    background: #343a40;
+}
+.text-gris-claro {
+    color: #e0e0e0; /* Gris claro */
 }
 
 .container{

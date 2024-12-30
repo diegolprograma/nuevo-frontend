@@ -1,46 +1,37 @@
 <div class="row">
-    <h1>Experiencia</h1>
-   
-    <div class="col-lg-11">
-        <ul>
-            <li>
-                <h3>Trabajo 1</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Ullam adipisci vel necessitatibus quibusdam dolorem aliquam ex illum voluptatibus,
-                sunt iusto hic enim, laboriosam, quidem est? Maxime deserunt ea architecto dolores!</p>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <h3>Trabajo 2</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Ullam adipisci vel necessitatibus quibusdam dolorem aliquam ex illum voluptatibus,
-                sunt iusto hic enim, laboriosam, quidem est? Maxime deserunt ea architecto dolores!</p>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <h3>Trabajo 3</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Ullam adipisci vel necessitatibus quibusdam dolorem aliquam ex illum voluptatibus,
-                sunt iusto hic enim, laboriosam, quidem est? Maxime deserunt ea architecto dolores!</p>
-            </li>
-        </ul>
-
-        
-
+    <div class="text-gris-claro">
+        <h1>Experiencia</h1>
     </div>
-    <div class="container">
-        <div class="col-sm-6 col-md-4 col-lg-3">   
-            <!-- Button trigger modal -->
-        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#sobremiModal">
-        <i class="fa fa-pen"></i>
-        </button>
-        <!-- Button trigger modal cerrar-->
-        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#sobremiModal"><i class="fa-solid 
-        fa-trash-can"></i></button>
-        </div>
-        </div>
-</div>
    
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-light" routerLink="/nuevaexp" *ngIf="isLogged">
+            <i class="fa fa-pen"></i> Nueva Experiencia
+        </button>
+    </div>
     
+    <div class="col-12">
+        <table class="table text-gris-claro">
+            <tbody>
+                <tr *ngFor="let Experiencia of expe">
+                    <td class="text-justify">
+                        <h2>{{Experiencia.nombreE}}</h2>
+                    </td>
+                    <td class="text-justify">{{Experiencia.descripcionE}}</td>
+                    <td class="text-end align-middle" *ngIf="isLogged">
+                        <div class="d-flex flex-column align-items-end justify-content-center">
+                            <button class="btn btn-light mb-2 fixed-button" routerLink="/editexp/{{Experiencia.id}}">
+                                <i class="fa fa-pen"></i> EDITAR
+                            </button>
+                            <button class="btn btn-light fixed-button" (click)="delete(Experiencia.id)">
+                                <i class="fa-solid fa-trash-can"></i> BORRAR
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+</div>

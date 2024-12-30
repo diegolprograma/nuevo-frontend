@@ -3,9 +3,19 @@
 }
 
 div{
-    background: #d6d1d1;
+    background: #343a40;
+}
+.text-gris-claro {
+    color: #e0e0e0; /* Gris claro */
 }
 
 .container{
     margin-left: -10px;
+}
+
+.fixed-button {
+    min-width: 120px; /* Ancho mínimo para todos los botones */
+    max-width: 120px; /* Opcional: Limitar a un ancho fijo */
+    text-align: center; /* Centra el texto dentro del botón */
+    white-space: nowrap; /* Evita saltos de línea en el texto del botón */
 }

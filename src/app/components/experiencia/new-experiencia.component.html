@@ -1,0 +1,28 @@
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card p-4 shadow">
+                <h2 class="text-center mb-4">Agregar Nueva Experiencia</h2>
+                <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                    <!-- Campo: Nombre de la empresa -->
+                    <div class="form-group mb-3">
+                        <label for="nombreE" class="form-label">Nombre de la Empresa</label>
+                        <input type="text" class="form-control" id="nombreE" name="nombreE" [(ngModel)]="nombreE" required>
+                    </div>
+                    <!-- Campo: Descripción de la tarea -->
+                    <div class="form-group mb-3">
+                        <label for="descripcionE" class="form-label">Descripción de la Tarea</label>
+                        <textarea class="form-control" id="descripcionE" name="descripcionE" [(ngModel)]="descripcionE" rows="4" required></textarea>
+                    </div>
+                    <!-- Botón -->
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary me-2">
+                            <i class="fa fa-plus"></i> Agregar Experiencia
+                        </button>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

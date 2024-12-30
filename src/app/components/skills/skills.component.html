@@ -1,89 +1,37 @@
 <div class="row">
-    <h1>Hard & Soft skills</h1>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [percent]="85"
-        [radius]="100"
-        [title]="'HTML'"
-        [showUnits]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#78C000'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="800"
-    ></circle-progress>
+    <div class="text-gris-claro">
+        <h1>Hard & Soft skills</h1>
     </div>
-    <div class="text-center ol-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [percent]="70"
-        [radius]="100"
-        [title]="'CSS'"
-        [showUnits]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#78C000'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="800"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [percent]="70"
-        [radius]="100"
-        [title]="'JAVASCRIPT'"
-        [showUnits]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#78C000'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="800"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [percent]="65"
-        [radius]="100"
-        [title]="'GITHUB'"
-        [showUnits]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#78C000'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="800"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [percent]="60"
-        [radius]="100"
-        [title]="'INGLES'"
-        [showUnits]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#78C000'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="800"
-    ></circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [percent]="100"
-        [radius]="100"
-        [title]="'COMPAÑERISMO'"
-        [showUnits]="false"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#78C000'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="800"
-    ></circle-progress>
-    </div>
+    
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-light" routerLink="/newskill" *ngIf="isLogged"><i class="fa fa-pen" ></i> Nueva Skill</button>
+    </div> 
+    
+    <div class="col-12 d-flex justify-content-center flex-wrap">
+        <div class="text-center col-sm-4 col-md-4 col-lg-3 circulo mb-4" *ngFor="let skill of skill">
+            <circle-progress
+                [percent]="(skill.porcentaje)"
+                [radius]="100"
+                [title]="(skill.nombre)"
+                [titleColor]="'#f8f9fa'"
+                [showUnits]="false"
+                [outerStrokeWidth]="16"
+                [innerStrokeWidth]="8"
+                [outerStrokeColor]="'#78C000'"
+                [innerStrokeColor]="'#C7E596'"
+                [animation]="true"
+                [animationDuration]="800"
+            ></circle-progress>
 
-
+            <!-- Botones de acción -->
+            <div class="me-2">
+                <button class="btn btn-light me-2" *ngIf="isLogged" routerLink="/editskill/{{skill.id}}">
+                    <i class="fa fa-pen"></i> EDITAR
+                </button>
+                <button class="btn btn-light" *ngIf="isLogged" (click)="delete(skill.id)">
+                    <i class="fa-solid fa-trash-can"></i> BORRAR
+                </button>
+            </div>
+        </div>
+    </div>
 </div>

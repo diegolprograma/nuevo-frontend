@@ -1,22 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { IndexComponent } from './components/index/index.component';
-import { HeaderComponent } from './components/header/header.component';
-import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
-import { ExperienciaComponent } from './components/experiencia/experiencia.component';
-import { SkillsComponent } from './components/skills/skills.component';
-import { ProyectosComponent } from './components/proyectos/proyectos.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
+import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
+import { NewSkillComponent } from './components/skills/new-skill.component';
+import { EditSkillComponent } from './components/skills/edit-skill.component';
+
+
 
 
 const routes: Routes = [
-  {path: '' , component: IndexComponent},
-  {path: 'header' , component: HeaderComponent},
-  {path: 'sobremi' , component: SobreMiComponent},
-  {path: 'experiencia' , component: ExperienciaComponent},
-  {path: 'skills' , component: SkillsComponent},
-  {path: 'proyectos' , component: ProyectosComponent},
-  {path: 'footer' , component: FooterComponent}
+  {path: '' , component: HomeComponent},
+  {path: 'login' , component: LoginComponent},
+  {path: 'nuevaexp', component: NewExperienciaComponent},
+  {path: 'editexp/:id', component: EditExperienciaComponent},
+  {path: 'newskill', component: NewSkillComponent},
+  {path: 'editskill/:id', component: EditSkillComponent}
+  
   
 ];
 
